@@ -24,15 +24,15 @@ Online Payment: Integration with online payment systems for secure payments.
 
 Email Confirmation: After placing an order, users receive a confirmation email with detailed bill information.
 
-# Administrator Features
+## Administrator Features
 Admin Login: Administrators can log in to the system to access administrative features.
 
 Item Management: Administrators can view, edit, and delete food items from the system.
 
-## Application Architecture
+# Application Architecture
 The Food Ordering System follows a three-tier architecture, separating the presentation layer (frontend), application logic (backend), and data storage (database). This design ensures modularity, maintainability, and scalability for future enhancements.
 
-## How to Run
+# How to Run
 Clone this repository to your local machine.
 
 Open the solution in Microsoft Visual Studio.
@@ -42,17 +42,17 @@ Migrate the database
 Create the Admin using 'CreateAdminOneTimeController'
 
 
-## Technology Stack
+# Technology Stack
 Frontend: HTML, CSS, Bootstrap, JavaScript
 Backend: C#, ASP.NET
 Database: SQL (Microsoft SQL Server)
 
 
-## User Roles
+# User Roles
 Customer (User): Users can browse, order, and pay for food items.
 
 Administrator: Administrators can manage food items and view orders.
 
-## System Overview
+# System Overview
 The Food Ordering System simplifies food ordering and delivery. Users can register, browse, order, and pay for their favorite food items. Administrators can manage the system's food items.
 
