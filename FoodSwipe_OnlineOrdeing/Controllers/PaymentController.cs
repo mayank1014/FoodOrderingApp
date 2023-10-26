@@ -83,7 +83,7 @@ namespace FoodOrderingSystem.Controllers
                     //Add your email address to the recipients
                     msg.To.Add(User.Identity.Name.ToString());
                     //Configure the address we are sending the mail from
-                    MailAddress address = new MailAddressmanupatel20022005");
+                    MailAddress address = new MailAddress("manupatel20022005");
                     msg.From = address;
                     msg.Subject = "Order Successfully Placed!!";
                     msg.Body = sb.ToString();
@@ -92,7 +92,7 @@ namespace FoodOrderingSystem.Controllers
                     smtp.Port = 587;
                     smtp.UseDefaultCredentials = true;
                     smtp.EnableSsl = true;
-                    smtp.Credentials = new System.Net.NetworkCredentialmanupatel20022005", "Manu@2004");
+                    smtp.Credentials = new System.Net.NetworkCredential("manupatel20022005", "Manu@2004");
                     smtp.Send(msg);
                     Console.WriteLine("Mail Sent");
                 }
@@ -138,7 +138,7 @@ namespace FoodOrderingSystem.Controllers
                 //Add your email address to the recipients
                 msg.To.Add(User.Identity.Name.ToString());
                 //Configure the address we are sending the mail from
-                MailAddress address = new MailAddressmanupatel20022005");
+                MailAddress address = new MailAddress("manupatel20022005");
                 msg.From = address;
                 msg.Subject = "Order Successfully Placed!!";
                 msg.Body = sb.ToString();
