@@ -2,8 +2,8 @@
 Food Ordering System
 This Food Ordering System is a web application developed for ordering food. It allows users to browse a variety of food categories, select items, add them to a cart, place orders, and make payments. This system also includes user registration, login, and remember me functionality. Administrators can manage the food items and view orders.
 
-## Features
-# User Features
+# Features
+## User Features
 User Registration: Users can register by providing their information, and the system validates the input.
 
 User Login: Registered users can log in with their credentials.
