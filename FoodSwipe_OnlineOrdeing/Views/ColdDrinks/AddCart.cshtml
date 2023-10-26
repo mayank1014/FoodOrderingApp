@@ -1,0 +1,28 @@
+﻿@model FoodOrderingSystem.Models.OrderList
+    <div style="border: solid 2px black; display: block; border-radius: 10px; background-color: #ebf3f4">
+        <h1 style="color: #0a0a0a">Add to Cart</h1><br /><br />
+        <br />
+        <br />
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 mx-auto">
+                    <form asp-action="AddCart" method="post">
+                        <div style="font-size:30px">Item  :  @ViewBag.var1</div>
+                        <input type="hidden" asp-for="Item" class="form-control" value="@ViewBag.var1" />
+                        <br />
+                        <div style="font-size:30px">Price :  @ViewBag.var2</div>
+                        <input type="hidden" asp-for="TotalPrice" class="form-control" value="@ViewBag.var2" />
+                        <br />
+                        <div style="font-size:20px">Quantity</div>
+
+                        <input asp-for="Quantity" min="1" class="form-control" />
+                        <br /><br />
+
+                        <input class="btn btn-primary " type="submit" value=" ADD " />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-primary" asp-controller="ColdDrinks" asp-action="Index"><b>Back</b></a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>

@@ -1,0 +1,62 @@
+﻿@model FoodOrderingSystem.ViewModels.GeneralViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    var photoPath = "~/images/" + (Model.ExistingPhotoPath ?? "image_not_found.png");
+}
+
+<h1>Edit</h1>
+
+<h4>South-Indian</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input hidden asp-for="ExistingPhotoPath" />
+            <div class="form-group">
+                <label asp-for="Item" class="control-label"></label>
+                <input asp-for="Item" class="form-control" />
+                <span asp-validation-for="Item" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div>
+                <label>Image</label><br />
+                <img src=@photoPath class="imt" asp-append-version="true" />
+            </div><br />
+            <div class="form-group ">
+                <label asp-for="Photo"></label><br />
+                <div class="col-sm-20">
+                    <div class="custom-file">
+                        <input asp-for="Photo" class="form-control custom-file-input">
+                        <label class="custom-file-label">Choose File...</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+            $(document).ready(function () {
+                $('.custom-file-input').on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).next('.custom-file-label').html(fileName);
+                });
+            });
+</script>
+}

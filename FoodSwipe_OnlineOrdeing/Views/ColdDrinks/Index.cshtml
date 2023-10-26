@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FoodOrderingSystem.Models.ColdDrinks>
+
+@{
+    ViewData["Title"] = "ColdDrinks";
+}
+
+<h1>Cold-Drinks</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var photoPath = "~/images/" + (item.PhotoPath ?? "image_not_found.png");
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item)
+                </td>
+                <td>
+                    <img class="imt" src=@photoPath asp-append-version="true" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a><div class="for-space"></div>
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+                    }
+                    else
+                    {
+                        <a asp-action="AddCart" class="btn btn-info" asp-route-id="@item.Id">Add to Cart</a>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (User.IsInRole("Admin"))
+{
+    <br />
+    <br />
+    <center>
+        <a class="btn btn-primary" asp-action="Create"> Add New</a><br />
+    </center>
+}

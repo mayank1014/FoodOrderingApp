@@ -1,0 +1,23 @@
+﻿@model FoodOrderingSystem.Models.Payment
+<h1>Address Details</h1>
+
+<form  class="pay-form" asp-controller="Payment" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" />
+    <span style="color:red" asp-validation-for="Name"></span>
+    <br />
+    <label asp-for="Address"></label>
+    <input asp-for="Address" class="form-control" />
+    <span style="color:red" asp-validation-for="Address"></span>
+    <br />
+    <label asp-for="Mob"></label>
+    <input asp-for="Mob" class="form-control" />
+    <span style="color:red" asp-validation-for="Mob"></span>
+    <br />
+    <center><label>Payment Mode</label></center>
+    <button type="submit" asp-action="Payment_Online" class="btn btn-primary btn-block">Online</button>
+    <center><label>or</label></center>
+    <button type="submit" asp-action="Payment_Offline" class="btn btn-primary btn-block">Offline</button><br /><br />
+    <center> <a class="btn btn-outline-secondary" asp-controller="OrderLists" asp-action="Index">Back</a></center>
+    
+</form>

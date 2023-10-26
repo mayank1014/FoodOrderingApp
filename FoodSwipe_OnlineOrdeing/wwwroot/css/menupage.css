@@ -1,0 +1,20 @@
+﻿body {
+}
+h1,h3{
+    text-align:center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ele{
+    margin:25px 35px;
+}
+
+.ele a{
+}
+.imgc {
+    width: 300px;
+}

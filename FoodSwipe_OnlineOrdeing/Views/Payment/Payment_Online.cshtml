@@ -1,0 +1,30 @@
+﻿@model FoodOrderingSystem.Models.Payment_Online
+
+
+<h1>Payment</h1>
+<br />
+<form class="pay-form" asp-controller="Payment" asp-action="Success_Online" method="post">
+    <label asp-for="Name">Name on card</label>
+    <input asp-for="Name" class="form-control" />
+    <span style="color:red" asp-validation-for="Name"></span>
+    <br />
+    <label asp-for="CardNumber">Card Number</label>
+    <input asp-for="CardNumber" class="form-control" />
+    <span style="color:red" asp-validation-for="CardNumber"></span>
+    <br />
+    <label asp-for="Month">Ex Month</label>
+    <input asp-for="Month" class="form-control" />
+    <span style="color:red" asp-validation-for="Month"></span>
+    <br />
+    <label asp-for="Year">Ex Year</label>
+    <input asp-for="Year" class="form-control" />
+    <span style="color:red" asp-validation-for="Year"></span>
+    <br />
+    <label asp-for="Cvv">Cvv</label>
+    <input asp-for="Cvv" class="form-control" />
+    <span style="color:red" asp-validation-for="Cvv"></span>
+    <br />
+    
+    <button type="submit" class="btn btn-primary btn-block">Pay @ViewBag.TPOnline</button>
+
+</form>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FoodOrderingSystem.Models.OrderList>
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<h1>Order List</h1>
+@{ 
+    var sum = 0;
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => (item.TotalPrice))
+                </td>
+                <td>
+                    <a asp-action="Delete"  class="btn btn-outline-danger" asp-route-id="@item.Id"><b>Delete</b></a>
+                </td>
+            </tr>
+            sum = sum + Convert.ToInt32(item.TotalPrice);
+        }
+        
+
+    </tbody>
+    
+</table>
+<center>
+    <p>
+        <br /> <br />
+        @{ if (sum > 0)
+            {
+              <a class="btn btn-primary" asp-action="Payment" asp-controller="Payment" asp-route-id="@sum"> Order Now </a><br />
+            }
+         }
+    </p>
+</center>
+ 
