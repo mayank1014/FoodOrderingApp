@@ -6,7 +6,7 @@ This Food Ordering System is a web application developed for ordering food. It a
 ## User Features
 User Registration: Users can register by providing their information, and the system validates the input.
 
-User Login: Registered users can log in with their credentials.
+User Login: Registered users can login with their credentials.
 
 Remember Me: The "Remember Me" functionality allows users to stay logged in even after closing the browser.
 
